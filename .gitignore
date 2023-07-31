@@ -1,0 +1,6 @@
+# Ignore all contents of node_modules
+node_modules/
+
+.vs/
+.vscode/
+coverage/

@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dfdfdf;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: #303030 solid 1px;
+  padding: 0.5em 1em;
+  color: #303030;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type='button'],
+button {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  scale: 1.4;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border: 2px solid black;
+  margin: 5px 8px;
+  border-radius: 5px;
+}
+
+.nav a {
+  color: black;
+  padding: 0 10px;
+}
+
+.nav-border {
+  border-right: 2px solid black;
+  padding-right: 10px;
+}
+
+.nav a:hover {
+  color: blue;
+}
+
+main {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bg {
+  padding: 1em;
+  border-bottom: #d2d2d2 solid 1px;
+}
+
+#tvmaze .bg:nth-child(odd) {
+  background-color: #5ca6f5;
+  color: #fff;
+}
+
+#tvmaze .bg:hover,
+button:hover {
+  background-color: #303030;
+  color: #fff;
+}
+
+.bg-primary {
+  background-color: #5d9ee3;
+}
+
+.bg-primary-light {
+  background-color: #62a3e7;
+}
+
+#leadboard-section {
+  background-color: #fcfafa;
+  width: 40em;
+  max-width: 90%;
+  font-size: large;
+  padding: 2em 0;
+}
+
+#leadboard-section h2 {
+  color: #3d3d3d;
+  font-weight: 400;
+}
+
+.borderless {
+  border: unset;
+  width: 20em;
+  padding: 0.2em;
+  font-size: large;
+  font-style: italic;
+  background-color: unset;
+}
+
+.leadboard,
+.borderless,
+#clear label {
+  font-size: 1.2em;
+  padding-left: 1em;
+  color: #303030;
+}
+
+#clear label {
+  color: #6c6c6c;
+}
+
+.leadboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+}
+
+#clear,
+#clear label {
+  text-align: center;
+  cursor: pointer;
+}
+
+.bg-brown {
+  background-color: #ffffc6;
+}
+
+#btnRefresh {
+  float: right;
+  border: unset;
+  background-color: unset;
+}
+
+.cancelled {
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+.float-right {
+  float: right;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fcfafa;
+  background-color: rgb(0, 81, 255);
+}
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 5.5s steps(140, end) infinite,
+    blink-caret .75s step-end;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  50% { width: 100% }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.row {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.col-md-12,
+.col-md-6 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-md-6 {
+    width: 45%;
+  }
+}
