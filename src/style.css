@@ -1,65 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "Lora", serif;
+  margin: 0;
+  width: 100%;
+  height: 100%;
   background-color: #dfdfdf;
-  min-height: 100vh;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-logo {
+  height: auto;
+  margin-left: 1.5rem;
+  padding: 18px;
+  padding-left: 18rem;
+  list-style: none;
+  background-image: url('../src/assets/images/logo.png');
+}
+
+.navbar {
+  display: flex;
+  height: 65px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: #2d2c38;
+  border: 2px solid #dc3545;
+  flex-direction: row;
+}
+
+.navbar-nav {
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  padding-left: 1rem;
+  list-style: none;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+
+.navbar-nav > li.nav-item > a.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 900;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+}
+
+.navbar-nav > li.nav-item > a.nav-link:hover,
+.navbar-nav > li.nav-item > a.nav-link:focus {
+  color: #f05f40;
 }
 
 a {
   text-decoration: none;
 }
 
-input[type='text'],
-input[type='number'] {
-  border: #303030 solid 1px;
-  padding: 0.5em 1em;
-  color: #303030;
+main {
+  margin-top: 5em;
+  min-height: 75vh;
+}
+
+section,
+footer {
+  padding: 2em;
+}
+
+footer {
+  border-top: solid 2px #000;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.modal {
+  display: none;
+}
+
+.modal.show {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  background-color: #c1c7d0d5;
+  z-index: 2000;
+  padding: 1em;
+  overflow-y: initial !important;
+}
+
+.modal-container {
+  flex-wrap: wrap;
+  background-color: #fff;
+  color: #000;
+  padding: 2em;
+  border-radius: 1em;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  right: 2em;
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.col-md-12,
+.col-md-6,
+.col-md-4,
+.meal-detail {
+  max-width: 100%;
+}
+
+#itemImage {
+  max-width: 25em;
+  max-height: 10em;
+}
+
+#category,
+#area,
+#tags {
+  font-weight: 400;
+  font-size: large;
+}
+
+.ingredients {
+  padding: 0 1em;
+}
+
+#modal-section {
+  background-color: #fcfafa;
+  max-width: 90%;
+  font-size: large;
+  padding: 2em 0;
+}
+
+#modal-section h2 {
+  color: #3d3d3d;
+  font-weight: 400;
+}
+
+.comment-form,
+.comment-list-section {
+  padding: 1em 0;
+}
+
+.comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  flex-direction: column;
+  min-width: 38%;
+}
+
+.comment-list {
+  list-style: none;
+}
+
+.comment-form input,
+.comment-form textarea,
+.comment-form button {
   border-radius: 5px;
+  padding: 0.2em 0.5em;
   width: 100%;
 }
 
-input[type='button'],
-button {
-  cursor: pointer;
+.comment-form input,
+.comment-form button {
+  height: 3em;
 }
 
-input[type='checkbox'] {
-  scale: 1.4;
-  cursor: pointer;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 15px 25px;
-  border: 2px solid black;
-  margin: 5px 8px;
-  border-radius: 5px;
-}
-
-.nav a {
-  color: black;
-  padding: 0 10px;
-}
-
-.nav-border {
-  border-right: 2px solid black;
-  padding-right: 10px;
-}
-
-.nav a:hover {
-  color: blue;
-}
-
-main {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
+.comment-form textarea {
+  height: 10em;
 }
 
 .bg {
@@ -67,142 +217,110 @@ main {
   border-bottom: #d2d2d2 solid 1px;
 }
 
-#tvmaze .bg:nth-child(odd) {
+.comment-list-section p {
+  padding: 0 0 1em 1em;
+}
+
+.mtb-2 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.comment-list li:nth-child(odd) {
   background-color: #5ca6f5;
   color: #fff;
 }
 
-#tvmaze .bg:hover,
-button:hover {
+.comment-list li:hover,
+.comment-form button:hover {
   background-color: #303030;
   color: #fff;
+  cursor: pointer;
 }
 
 .bg-primary {
-  background-color: #5d9ee3;
+  background-color: #3295d0;
+
+  /* background-color: #5d9ee3; */
 }
 
 .bg-primary-light {
   background-color: #62a3e7;
 }
 
-#leadboard-section {
-  background-color: #fcfafa;
-  width: 40em;
+.comment-list-section {
   max-width: 90%;
   font-size: large;
   padding: 2em 0;
 }
 
-#leadboard-section h2 {
+.comment-list-section h2 {
   color: #3d3d3d;
   font-weight: 400;
 }
 
-.borderless {
-  border: unset;
-  width: 20em;
-  padding: 0.2em;
-  font-size: large;
-  font-style: italic;
-  background-color: unset;
-}
-
-.leadboard,
-.borderless,
-#clear label {
-  font-size: 1.2em;
-  padding-left: 1em;
-  color: #303030;
-}
-
-#clear label {
-  color: #6c6c6c;
-}
-
-.leadboard {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0.5em 1em;
-}
-
-#clear,
-#clear label {
-  text-align: center;
-  cursor: pointer;
-}
-
-.bg-brown {
-  background-color: #ffffc6;
-}
-
-#btnRefresh {
-  float: right;
-  border: unset;
-  background-color: unset;
-}
-
-.cancelled {
-  text-decoration: line-through;
-}
-
-.hidden {
-  display: none;
-}
-
-.float-right {
-  float: right;
-}
-
-.btn {
-  padding: 0.5em 1em;
-  cursor: pointer;
-}
-
-.btn-primary {
-  color: #fcfafa;
-  background-color: rgb(0, 81, 255);
-}
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 5.5s steps(140, end) infinite,
-    blink-caret .75s step-end;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  50% { width: 100% }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
-.row {
-  display: flex;
-  gap: 0.5em;
+.meal-list {
   justify-content: center;
-  flex-wrap: wrap;
 }
 
-.col-md-12,
-.col-md-6 {
+.meal-detail {
+  display: flex;
+  flex-direction: column;
+  border: #000 2px solid;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 1em;
+}
+
+.meal-detail img {
   width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
 }
 
+.meal-detail div {
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+.meal-detail i {
+  color: #1cda5b;
+  cursor: pointer;
+}
+
+.meal-detail button {
+  padding: 0.5em 1em;
+}
+
+.meal-detail button:hover {
+  background-color: #1c9eda;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Put all mobile code above this. */
 @media only screen and (min-width: 768px) {
+  .meal-detail {
+    max-width: 20%;
+  }
+
+  .col-md-4 {
+    width: 18%;
+  }
+
   .col-md-6 {
     width: 45%;
+  }
+
+  .modal-container {
+    padding: 2em 5em;
+  }
+
+  .comment-list-section {
+    width: 60%;
+  }
+
+  .modal-close {
+    right: 4em;
   }
 }
